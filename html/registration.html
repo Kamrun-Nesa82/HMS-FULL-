@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System - Login</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Logo name -->
+        <a href="#" class="logo"><span>D</span>octors <span>C</span>ares</a>
+
+        <!-- Navbar links -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="../html/home page.html">Home</a></li>
+                <li><a href="../html/home page.html">About</a></li>
+                <li><a href="../html/home page.html">Contact</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+            </ul>
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+    <!-- Header navbar section end -->
+
+
+    <div class="registration">
+        <h1>Registration</h1>
+        <form id="registrationForm">
+            <div class="inputbox">
+                <input type="text" id="username" name="username" placeholder="User Name" required>
+            </div><br>
+            <div class="inputbox">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div><br>
+            <div class="inputbox">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div><br>
+            <div class="input-box">
+                <input type="text" name="contact" class="input-field" placeholder="Enter your contact number" required>
+            </div><br>
+            <button type="submit" name="submit">Registration</button><br><br>
+            <div style="color:black;font-size: 15px;">Already a member?<a href="../html/login.html"><p style="color:blue">Login Here</p></a></div>
+        </form>
+    </div>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const form = document.getElementById('loginForm');
+            if (form.checkValidity()) {
+                alert('Login successful!');
+                form.reset();
+            } else {
+                alert('Please fill out all fields correctly.');
+            }
+        }
+    </script>
+</body>
+
+</html>

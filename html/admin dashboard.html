@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/fav_icon.jpg">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/admin dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+    
+    #sidebar .nav-link span {
+      display: inline-block;
+    }
+    #sidebar.collapsed .nav-link span {
+      display: none;
+    }
+    #sidebar.collapsed {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+   Admin Dashboard
+    <!-- Sidebar toggle icon beside text -->
+    <i class="fas fa-bars" id="menuToggle" onclick="toggleSidebar()"></i>
+  </a>
+  <div class="ml-auto">
+    <!-- Logout button -->
+    <a href="../html/home page.html" class="btn btn-outline-light" onclick="return confirmLogout()">Logout</a>
+  </div>
+  
+  <script>
+    function confirmLogout() {
+      alert("Logout successfully.");
+      return true; // Allow the link to proceed
+    }
+  </script>
+  
+</nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+
+
+
+
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="../html/admin dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-injured"></i> <span>Manage Patients</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/doctor_dash.php"><i class="fas fa-user-md"></i> <span>Manage Doctors</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/admin view_appointment.php"><i class="fas fa-calendar-alt"></i> <span>Appointments</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/admin view_prescription.php"><i class="fas fa-prescription-bottle-alt"></i> <span>Prescriptions</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/contact_dash.php"><i class="fas fa-question-circle"></i> <span>Queries</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Welcome, Admin</h1>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Manage Patients</h5>
+                <p class="card-text">View and manage all patients in the system.</p>
+                <a href="#" class="btn btn-primary">Manage Patients</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Manage Doctors</h5>
+                <p class="card-text">View and manage all doctors in the system.</p>
+                <a href="#" class="btn btn-primary">Manage Doctors</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Appointments</h5>
+                <p class="card-text">View and manage appointments between doctors and patients.</p>
+                <a href="#" class="btn btn-primary">Manage Appointments</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>

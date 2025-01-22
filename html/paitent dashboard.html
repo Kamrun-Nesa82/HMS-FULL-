@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard</title>
+  <link rel="icon" href="../images/fav_icon.jpg">
+  <link rel="stylesheet" href="../css/patient dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Navbar styling */
+    .navbar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .navbar-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+    #menuToggle {
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      margin-left: 10px; /* Spacing between text and icon */
+    }
+
+    /* Sidebar styling */
+    #sidebar {
+      width: 250px;
+      transition: width 0.3s, visibility 0.3s;
+      background-color: #f8f9fa;
+    }
+    #sidebar.collapsed {
+      width: 80px;
+      visibility: visible;
+    }
+    #sidebar .nav-link span {
+      display: inline-block;
+      transition: opacity 0.3s;
+    }
+    #sidebar.collapsed .nav-link span {
+      opacity: 0;
+    }
+    #sidebar .nav-link i {
+      margin-right: 10px;
+    }
+
+    /* Main content adjustment */
+    main {
+      transition: margin-left 0.3s;
+      margin-left: 250px;
+    }
+    #sidebar.collapsed + main {
+      margin-left: 80px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Patient Dashboard
+    <!-- Sidebar toggle icon beside text -->
+    <i class="fas fa-bars" id="menuToggle" onclick="toggleSidebar()"></i>
+  </a>
+  <div class="ml-auto">
+    <!-- Logout button -->
+    <a href="logout.php" class="btn btn-outline-light">Logout</a>
+  </div>
+</nav>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link active" href="../html/paitent dashboard.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/book appointment.php"><i class="fas fa-calendar-alt"></i><span> Appointments</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/Patient view_prescription.php"><i class="fas fa-prescription-bottle-alt"></i><span>Prescriptions</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/View appointment.php"><i class="fas fa-file-medical"></i><span>Visit History</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="../php/patient view_doctor.php"><i class="fas fa-file-medical"></i><span>Doctor List</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Welcome, [Patient Name]</h1>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Upcoming Appointments</h5>
+                <p class="card-text">View your upcoming doctor appointments.</p>
+                <a href="#" class="btn btn-primary">View Appointments</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Recent Prescriptions</h5>
+                <p class="card-text">Access your recent prescriptions from doctors.</p>
+                <a href="#" class="btn btn-primary">View Prescriptions</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Appointments History</h5>
+                <p class="card-text">Access your past appointment history</p>
+                <a href="#" class="btn btn-primary">View History</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>

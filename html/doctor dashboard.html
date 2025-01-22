@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors Dashboard</title>
+  <link rel="icon" href="../images/fav_icon.jpg">
+  <link rel="stylesheet" href="../css/doctor dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Default sidebar styling */
+    #sidebar {
+      width: 200px;
+      transition: width 0.3s ease;
+    }
+    #sidebar.collapsed {
+      width: 60px; /* Shrink width when collapsed */
+    }
+    #sidebar .nav-link {
+      display: flex;
+      align-items: center;
+    }
+    #sidebar .nav-link span {
+      margin-left: 10px;
+      transition: opacity 0.3s ease;
+    }
+    /* Hide text when sidebar is collapsed */
+    #sidebar.collapsed .nav-link span {
+      opacity: 0;
+      visibility: hidden;
+    }
+    /* Adjust main content margin when sidebar is collapsed */
+    main {
+      margin-left: 200px;
+      transition: margin-left 0.3s ease;
+    }
+    main.collapsed {
+      margin-left: 60px;
+    }
+    #menuToggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      Doctor Dashboard
+      <!-- Sidebar toggle icon beside text -->
+      <i class="fas fa-bars" id="menuToggle" onclick="toggleSidebar()"></i>
+    </a>
+    <div class="ml-auto d-flex align-items-center">
+      <form class="form-inline mr-3">
+          <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">
+              <i class="fas fa-search"></i>
+          </button>
+      </form>
+      <a href="../html/home page.html" class="btn btn-outline-light">Logout</a>
+  </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar with icons and options -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column mt-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../php/view appointment_doctor.php">
+                <i class="fas fa-calendar-check"></i> <span>Appointments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../php/doctor view_prescription.php">
+                <i class="fas fa-file-prescription"></i> <span>Prescriptions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-users"></i> <span>Patients</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard Overview</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Appointments</h5>
+                <p class="card-text">Manage upcoming appointments.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Prescriptions</h5>
+                <p class="card-text">Review and add prescriptions.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Patients</h5>
+                <p class="card-text">Check patient information.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    // JavaScript to toggle sidebar visibility
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const mainContent = document.querySelector("main");
+      sidebar.classList.toggle("collapsed");
+      mainContent.classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>

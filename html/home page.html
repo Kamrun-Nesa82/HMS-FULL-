@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="../css/home page.css">
+</head>
+
+<body>
+
+    <!-- Header navbar section start -->
+    <header>
+        <!-- Logo name -->
+        <a href="#" class="logo"><span>D</span>octors <span>C</span>ares</a>
+
+        <!-- Navbar links -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="../php/login.php">Login</a></li>
+            </ul>
+        </nav>
+        <div class="fas fa-bars"></div>
+    </header>
+    <!-- Header navbar section end -->
+
+    <!-- Home section start -->
+    <section id="home" class="home">
+        <div class="content">
+            <h1>Leading the way in medical excellence</h1>
+            <p>HMS is awarded as one of the Top Hospital Management Systems, which can integrate all the HIS systems, processes, and machines into an intelligent information system to derive operational efficiency and assist hospitals in the decision-making process through MIS and Analytics.</p>
+        </div>
+    </section>
+    <!-- Home section end -->
+
+    <!-- About section start -->
+    <section id="about" class="about">
+        <h1 class="heading">ABOUT US</h1>
+        <h3 class="title">Learn And Explore Our Facility</h3>
+
+        <div class="box-container">
+            <!-- Box 1 -->
+            <div class="box">
+                <div class="images">
+                    <img src="../images/about-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>All About Hospitals</h3>
+                    <p>A hospital is a place where a person goes to be healed when he or she is sick or injured. Hospitals also treat people who do not stay overnight, called outpatients. Doctors and nurses work at hospitals. Doctors make use of advanced medical technology to heal patients.</p>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="box">
+                <div class="images">
+                    <img src="../images/about doctor.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>All About Doctors & Nurses</h3>
+                    <p>Doctors and Nurses may refer to a children's game of imaginative role-playing where medical profession roles are adopted and acted out. A nurse is a person who is trained to give care to people who are sick or injured. Nurses work with doctors and other health care workers to make patients better.</p>
+                </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="box">
+                <div class="images">
+                    <img src="../images/about2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>All About Sweepers</h3>
+                    <p>A hospital cleaner, or cleaning operative, is a type of industrial or domestic worker who cleans homes, commercial premises, and hospital facilities. A cleaner is someone who takes away garbage and cleans surfaces. Cleaners sometimes repair things and maintain their equipment in good working condition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section end -->
+
+    <!-- Contact section start -->
+    <section id="contact" class="contact">
+        <h1 class="head">Contact Us</h1>
+        <div class="container">
+            <div class="left">
+                <h3 class="get">Get In Touch</h3>
+                <p class="text">    We are here for you! How can we help?</p>
+                <form id="contactForm">
+                    <div class="inputbox">
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your fullname" required />
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" id="email" name="email" placeholder="Enter your email address" required />
+                    </div>
+                    <div class="inputbox">
+                        <textarea id="message" name="message" placeholder="Enter your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="illustration">
+                    <img src="https://www.codesplendid.com/contact2.svg" alt="" height="250px" width="250px">
+                </div>
+                <div class="contact-info">
+                    <div class="infobox">
+                        <div class="icon">
+                            <ion-icon name="location-sharp"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <p>Mimi Residential Area, Nasirabad, Chittagong</p>
+                        </div>
+                    </div>
+                    <div class="infobox">
+                        <div class="icon">
+                            <ion-icon name="call-sharp"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <a href="tel:01776893440">01776893440</a>
+                        </div>
+                    </div>
+                    <div class="infobox">
+                        <div class="icon">
+                            <ion-icon name="mail-sharp"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <a href="mailto:coffee@gmail.com">coffee@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/officialcoffeeshop/">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fcoffeeshopworld">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="https://www.linkedin.com/company/the-coffee-shop">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact section end -->
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+    
+            if (!fullname || !email || !message) {
+                alert("All fields are required.");
+                return;
+            }
+    
+            if (confirm("Do you really want to send this message?")) {
+                var formData = new FormData(this);
+    
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "../php/contact_connection.php", true);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        alert("Message sent successfully");
+                        // Clear the form
+                        document.getElementById("contactForm").reset();
+                    } else {
+                        alert("Message sending failed: " + xhr.responseText);
+                    }
+                };
+                xhr.send(formData);
+            } else {
+                alert("Message sending cancelled");
+            }
+        });
+    </script>
+    
+
+    <!-- IonIcons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- IonIcons end -->
+
+    
+    <!-- footer section start  -->
+
+    <section class="footer">
+        <div class="container">
+            <div class="box">
+                <h2 class="logo"><span>D</span>octors <span>C</span>ares</h2>
+                <!-- <h1> <b>About Us</b> </h1> -->
+                <p>Dedicated to providing exceptional healthcare services, our hospital combines state-of-the-art technology with compassionate care. </p>
+            </div>
+
+            <div class="box">
+               
+
+                <div class="box">
+                    <div class="box-2">
+                        <h3>For Clients</h3>
+                    
+                        <!-- <ul>
+                            <li><a href="#home">--- Home</a></li>
+                            <li><a href="#about">--- About</a></li>
+                            <li><a href="#contact">--- Contact Us</a></li>
+                        </ul>
+                         -->
+                    </div>
+                    <p>
+                        <!-- <span><button><a href="#home"><i class="fa-solid fa-house" aria-hidden="#"></a></i></button></span>-->
+                        <span><button><a href="https://www.facebook.com/parkviewhospitalctg/"><i
+                                        class="fa-brands fa-facebook" aria-hidden="#"></a></i></button></span>
+                        <span><button><a
+                                    href="https://www.linkedin.com/jobs/medical-doctor-jobs/?currentJobId=4041946118"><i
+                                        class="fa-brands fa-linkedin" aria-hidden="#"></a></i></button></span>
+                        <span><button><a href="https://twitter.com/hospital_health?lang=bn"><i
+                                        class="fa-brands fa-twitter" aria-hidden="#"></a></i></button></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- footer section end  -->
+
+</body>
+
+</html>
